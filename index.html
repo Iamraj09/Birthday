@@ -6,141 +6,222 @@
     <title>Happy Birthday PookiE!</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background: url('https://example.com/starry-night.jpg') no-repeat center center fixed;
-            background-color: #000; /* Ensure the background is black */
-            background-size: cover;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh; /* Ensure the body takes up at least the full height of the viewport */
-            margin: 0;
-            text-align: center;
-            position: relative;
-            overflow-x: hidden; /* Prevent horizontal scroll */
-        }
-        .container {
-            background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for better contrast */
-            color: #fff; /* White text color for readability */
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-            max-width: 90%; /* Make it responsive */
-            margin: 20px;
-            position: relative;
-            z-index: 1;
-        }
-        h1 {
-            color: #ff6f61;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            animation: fadeInUp 1s ease-in-out;
-        }
-        p {
-            font-size: 1.2em;
-            margin: 10px 0;
-            animation: fadeInUp 1.5s ease-in-out;
-        }
-        #countdown {
-            font-size: 1.5em;
-            margin-top: 20px;
-            color: #ff6f61;
-            font-weight: bold;
-            animation: fadeInUp 2s ease-in-out;
-        }
-        .moon {
-            position: absolute;
-            top: 10%;
-            right: 5%;
-            width: 150px; /* Adjust size for responsiveness */
-            height: 150px;
-            background: url('moon.jpg') no-repeat center center;
-            background-size: cover;
-            opacity: 0.8;
-            animation: moonGlow 5s infinite alternate;
-            z-index: 0;
-        }
-        .excited-text {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 10px 20px;
-            border-radius: 10px;
-            color: #333;
-            font-size: 1.2em;
-            font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            animation: fadeInUp 1s ease-in-out;
-            z-index: 1;
-        }
-        .wishes {
-            background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for better contrast */
-            color: #fff; /* White text color for readability */
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-            max-width: 90%; /* Make it responsive */
-            margin: 20px;
-        }
-        .language {
-            font-size: 1.1em;
-            margin: 10px 0;
-        }
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        @keyframes moonGlow {
-            from {
-                filter: brightness(0.7);
-            }
-            to {
-                filter: brightness(1.2);
-            }
-        }
-        /* Media Queries for Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .container, .wishes {
-                padding: 15px;
-                max-width: 100%;
-            }
-            h1 {
-                font-size: 2em;
-            }
-            p {
-                font-size: 1em;
-            }
-            #countdown {
-                font-size: 1.2em;
-            }
-            .moon {
-                width: 120px;
-                height: 120px;
-            }
-            .excited-text {
-                font-size: 1em;
-                bottom: 10px;
-                left: 10px;
-                padding: 8px 15px;
-            }
-        }
+    font-family: 'Arial', sans-serif;
+    background: url('https://example.com/starry-night.jpg') no-repeat center center fixed;
+    background-color: #000; /* Ensure the background is black */
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ensure the body takes up at least the full height of the viewport */
+    margin: 0;
+    text-align: center;
+    position: relative;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.background-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    filter: blur(8px);
+    pointer-events: none; /* Ensure it doesn’t interfere with interactions */
+}
+
+.background-images img {
+    position: absolute;
+    width: 20%;
+    height: auto;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    opacity: 0.4;
+}
+
+.background-images img:nth-child(1) {
+    top: 0;
+    left: 0;
+}
+
+.background-images img:nth-child(2) {
+    top: 0;
+    left: 20%;
+}
+
+.background-images img:nth-child(3) {
+    top: 0;
+    left: 40%;
+}
+
+.background-images img:nth-child(4) {
+    top: 0;
+    left: 60%;
+}
+
+.background-images img:nth-child(5) {
+    top: 0;
+    left: 80%;
+}
+
+.moon {
+    position: absolute;
+    top: 2%; /* Adjusted from 10% to 5% to move the moon higher */
+    right: 5%;
+    width: 150px;
+    height: 150px;
+    background: url('moon.jpg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.9;
+    animation: moonGlow 5s infinite alternate;
+    z-index: 1;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for better contrast */
+    color: #fff; /* White text color for readability */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    max-width: 90%; /* Make it responsive */
+    margin: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    animation: fadeInUp 1s ease-in-out;
+    background: linear-gradient(45deg, #ff6f61, #ffb347, #f9a1d5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+#countdown {
+    font-size: 1.5em;
+    margin-top: 20px;
+    font-weight: bold;
+    animation: fadeInUp 2s ease-in-out;
+    background: linear-gradient(45deg, #ff6f61, #ffb347, #f9a1d5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.excited-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #333;
+    font-size: 1.2em;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease-in-out;
+    z-index: 2;
+}
+
+.wishes {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for better contrast */
+    color: #fff; /* White text color for readability */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    max-width: 90%; /* Make it responsive */
+    margin: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.language {
+    font-size: 1.1em;
+    margin: 10px 0;
+    background: linear-gradient(45deg, #ff6f61, #ffb347, #f9a1d5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes moonGlow {
+    from {
+        filter: brightness(0.7);
+    }
+    to {
+        filter: brightness(1.2);
+    }
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container, .wishes {
+        padding: 15px;
+        max-width: 100%;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    p {
+        font-size: 1em;
+    }
+    #countdown {
+        font-size: 1.2em;
+    }
+    .moon {
+        width: 120px;
+        height: 120px;
+    }
+    .excited-text {
+        font-size: 1em;
+        bottom: 10px;
+        left: 10px;
+        padding: 8px 15px;
+    }
+}
+
     </style>
 </head>
 <body>
+    <div class="background-images">
+        <img src="1.jpg" alt="Background Image 1">
+        <img src="2.png" alt="Background Image 2">
+        <img src="3.png" alt="Background Image 3">
+        <img src="4.jpg" alt="Background Image 4">
+        <img src="5.png" alt="Background Image 5">
+    </div>
     <div class="moon"></div>
     <div class="container">
-        <h1>Advance Happy Birthday to you PookiE!</h1>
-        <p>MadaM ItIShReE SaHoO,</p>
-        <p>On your special day, I want you to know how much you mean to me and I should thank to your Bou for giving you birth for me. Wishing you a very big Advance birthday filled with love, joy, and all the happiness in the world!</p>
+        <h1 id="birthday-message">Advance Happy Birthday to you PookiE!</h1>
+        <p>MadaM Ji ItIShReE SaHoO,</p>
+        <p>On your special day, I want you to know how much you mean to me and I should thank to your BOU for giving you birth for Me. Wishing you a very big Advance birthday filled with love, joy, and all the happiness in the world!</p>
         <p>You should know how much you mean to me and I cannot live without you my cutie Pookie and I will always be with you no matter you stay with me or not.</p>
         <div id="countdown"></div>
     </div>
@@ -148,7 +229,7 @@
         I’m so excited for your birthday, PookiE! 🌙💕
     </div>
     <div class="wishes">
-        <h2>Advance Happy Birthday Wishes in Various Languages</h2>
+        <h2 id="wishes-title">Advance Happy Birthday Wishes in Various Languages</h2>
         <div class="language">English: Advance Happy Birthday, PookiE</div>
         <div class="language">Spanish: Feliz Cumpleaños Adelantado, PookiE</div>
         <div class="language">French: Joyeux Anniversaire en Avance, PookiE</div>
@@ -171,15 +252,182 @@
         <div class="language">Finnish: Hyvää Syntymäpäivää Etukäteen, PookiE</div>
         <div class="language">Polish: Wczesne Życzenia Urodzinowe, PookiE</div>
         <div class="language">Greek: Πρόωρα Χρόνια Πολλά, PookiE (Proora Chronia Polla)</div>
-        <div class="language">Hebrew: יום הולדת שמח מראש, PookiE (Yom Huledet Sameach Merosh)</div>
-        <div class="language">Thai: สุขสันต์วันเกิดล่วงหน้า, PookiE (Suk San Wan Koet Luang Na)</div>
-        <div class="language">Vietnamese: Chúc Mừng Sinh Nhật Sớm, PookiE</div>
-        <div class="language">Swahili: Siku ya Kuzaliwa Mapema, PookiE</div>
-        <div class="language">Lithuanian: Išankstinės Gimimo Dienos Sveikinimai, PookiE</div>
-        <div class="language">Latvian: Priekšlaicīgs Dzimšanas Dienas Sveiciens, PookiE</div>
-        <div class="language">Estonian: Aegselt Head Sünnipäeva, PookiE</div>
+        <div class="language">Hebrew: יום הולדת שמח מראש, PookiE (Yom Huledet Sameach Me'rosh)</div>
+        <div class="language">Thai: สุขสันต์วันเกิดล่วงหน้า, PookiE (S̄uk̄h̄s̄ạnt̒ wạn keid lū̀ang n̂ā)</div>
+        <div class="language">Vietnamese: Sinh Nhật Sớm, PookiE</div>
+        <div class="language">Indonesian: Selamat Ulang Tahun Lebih Awal, PookiE</div>
+        <div class="language">Malay: Selamat Hari Jadi Awal, PookiE</div>
+        <div class="language">Tagalog: Maagang Maligayang Kaarawan, PookiE</div>
+        <div class="language">Swahili: Heri ya Siku ya Kuzaliwa Mapema, PookiE</div>
+        <div class="language">Zulu: Ukhisimusi Ouhle Okwangaphambili, PookiE</div>
+        <div class="language">Xhosa: Usuku Olumnandi Lokuzalwa Ngaphambili, PookiE</div>
+        <div class="language">Somali: Dabaaldeg Dhalasho Hore, PookiE</div>
+        <div class="language">Amharic: እንኳን ወቅታዊ ልደት ሐምሌ, PookiE (Inkwan weqtawi lidet hāmīlē)</div>
+        <div class="language">Tigrinya: ከምዕል ሕድሪ በዓል መልእኽት, PookiE (Kemil hidiri be'al melekhet)</div>
+        <div class="language">Burmese: အချိန်မီမွေးနေ့ဖြစ်ပါစေ၊ PookiE</div>
+        <div class="language">Laotian: ສະແດງເສບທີ່ໃຫ້ກໍ່ວັນປິດ, PookiE</div>
+        <div class="language">Khmer: សួស្តីថ្ងៃកំណើតមុន, PookiE</div>
+        <div class="language">Nepali: अग्रिम जन्मदिनको शुभकामना, PookiE</div>
+        <div class="language">Punjabi: ਪੂਰਵ ਜਨਮਦਿਨ ਦੀਆਂ ਵਧਾਈਆਂ, PookiE</div>
+        <div class="language">Marathi: आगाऊ वाढदिवसाच्या शुभेच्छा, PookiE</div>
+        <div class="language">Gujarati: પૂર્વજન્મદિનની શુભકામનાઓ, PookiE</div>
+        <div class="language">Sinhala: ප්‍රාථමික උපන් දිනය සුබාශිං, PookiE</div>
+        <div class="language">Telugu: ముందుగా జన్మదిన శుభాకాంక్షలు, PookiE</div>
+        <div class="language">Tamil: முன்னணி பிறந்த நாளுக்கான வாழ்த்துக்கள், PookiE</div>
+        <div class="language">Malayalam: മുൻകൂർ ജന്മദിനാശംസകൾ, PookiE</div>
+        <div class="language">Bengali: আগাম শুভ জন্মদিন, PookiE</div>
+        <div class="language">Hausa: Taya Murnar Ranar Haihuwa Da Wuri, PookiE</div>
+        <div class="language">Wolof: Jàmm rekk yi, PookiE</div>
+        <div class="language">Oromo: Baga Guyyaa Dhalootaa Duratti, PookiE</div>
+        <div class="language">Yoruba: Ibi Ọdún Káàárọ̀, PookiE</div>
+        <div class="language">Igbo: Nri Obi Akwụkwọ Ọgwụ, PookiE</div>
+        <div class="language">Xhosa: Usuku Olumnandi Lokuzalwa Ngaphambili, PookiE</div>
+        <div class="language">Chewa: Tsiku Labwino la Kubadwa, PookiE</div>
+        <div class="language">Twi: Akwabaa Afe Ntoaso, PookiE</div>
+        <div class="language">Amharic: እንኳን ወቅታዊ ልደት አድርጎ በማለት, PookiE</div>
+        <div class="language">Chichewa: Zikomo Kuti Muli ndi Tsiku Labwino la Kubadwa, PookiE</div>
+        <div class="language">Sesotho: Matsatsi a Mabothobotho a Keresemese, PookiE</div>
+        <div class="language">Sesotho: Matsatsi a a Masedi a Borai, PookiE</div>
+        <div class="language">Lingala: Biso nionso na nzela, PookiE</div>
+        <div class="language">Lingala: Télma senga na ntina, PookiE</div>
+        <div class="language">Kinyarwanda: Umunsi Mwiza wa Bagenzi bawe, PookiE</div>
+        <div class="language">Rundi: Umunsi Mwiza wa bagenzi bawe, PookiE</div>
+        <div class="language">Shona: Zororai Rakanaka, PookiE</div>
+        <div class="language">Xitsonga: Ku rhula ku hlamusela, PookiE</div>
+        <div class="language">Swahili: Heri ya Siku ya Kuzaliwa Mapema, PookiE</div>
+        <div class="language">Zulu: Ukhisimusi Ouhle Okwangaphambili, PookiE</div>
+        <div class="language">Xhosa: Usuku Olumnandi Lokuzalwa Ngaphambili, PookiE</div>
+        <div class="language">Sesotho: Matsatsi a Mabothobotho a Keresemese, PookiE</div>
+        <div class="language">Tswana: Letsatsi le Letle la Tsalo, PookiE</div>
+        <div class="language">Chichewa: Tsiku Labwino la Kubadwa, PookiE</div>
+        <div class="language">Shona: Kukukwazisa kwekuti Uve neMufaro, PookiE</div>
+        <div class="language">Kirmanjki: Sêvajînê îro têkurînê, PookiE</div>
+        <div class="language">Central Khmer: ជូនពរ មុនពេលកំណើត, PookiE</div>
+        <div class="language">Ukrainian: Попередній День Народження, PookiE (Poperedniy Den' Narodzhennya)</div>
+        <div class="language">Georgian: წინა დაბადების დღე, PookiE (ts'ina dabadebis dghe)</div>
+        <div class="language">Armenian: Նախավերջին Տարիք, PookiE (Nakhaverjin Tarik)</div>
+        <div class="language">Nepali: अग्रिम जन्मदिनको शुभकामना, PookiE</div>
+        <div class="language">Kazakh: Ертерек Туған Күніңізбен, PookiE</div>
+        <div class="language">Uzbek: Oldindan Tug‘ilgan Kuningiz bilan, PookiE</div>
+        <div class="language">Azerbaijani: Ön İki Doğum Günün Mübarək, PookiE</div>
+        <div class="language">Tajik: Маъзати Рӯзи Таваллуд Пешакӣ, PookiE</div>
+        <div class="language">Kurdish: Rojbûnê Pêşî, PookiE</div>
+        <div class="language">Pashto: مخکېنۍ د زېږېدو ورځ، PookiE</div>
+        <div class="language">Mongolian: Урьдчилан Төрсөн Өдрийн Мэнд Хүргэе, PookiE</div>
+        <div class="language">Māori: Hari Rā Whānau i mua, PookiE</div>
+        <div class="language">Hmong: Ua Tsaug Nyob Zoo, PookiE</div>
+        <div class="language">Somali: Dabaaldeg Dhalasho Hore, PookiE</div>
+        <div class="language">Armenian: Նախավերջին Տարիք, PookiE (Nakhaverjin Tarik)</div>
+        <div class="language">Kazakh: Ертерек Туған Күніңізбен, PookiE</div>
+        <div class="language">Uzbek: Oldindan Tug‘ilgan Kuningiz bilan, PookiE</div>
+        <div class="language">Azerbaijani: Ön İki Doğum Günün Mübarək, PookiE</div>
+        <div class="language">Tajik: Маъзати Рӯзи Таваллуд Пешакӣ, PookiE</div>
+        <div class="language">Kurdish: Rojbûnê Pêşî, PookiE</div>
+        <div class="language">Pashto: مخکېنۍ د زېږېدو ورځ، PookiE</div>
+        <div class="language">Mongolian: Урьдчилан Төрсөн Өдрийн Мэнд Хүргэе, PookiE</div>
+        <div class="language">Māori: Hari Rā Whānau i mua, PookiE</div>
+        <div class="language">Hmong: Ua Tsaug Nyob Zoo, PookiE</div>
     </div>
     <script>
+        const translations = {
+            en: 'Advance Happy Birthday to you PookiE!',
+            es: 'Feliz Cumpleaños Adelantado, PookiE',
+            fr: 'Joyeux Anniversaire en Avance, PookiE',
+            de: 'Alles Gute zum Geburtstag im Voraus, PookiE',
+            it: 'Buon Compleanno in Anticipo, PookiE',
+            pt: 'Feliz Aniversário Antecipado, PookiE',
+            nl: 'Van tevoren Gefeliciteerd, PookiE',
+            ru: 'С днём рождения заранее, PookiE (S dnyom rozhdeniya zaranee)',
+            zh: '提前生日快乐, PookiE (Tíqián shēngrì kuàilè)',
+            ja: '前祝いの誕生日おめでとう, PookiE (Mae iwai no tanjōbi omedetō)',
+            ko: '미리 생일 축하해요, PookiE (Miri saengil chukhahaeyo)',
+            ar: 'عيد ميلاد سعيد مقدماً, PookiE (Eid milad sa'id muqaddaman)',
+            hi: 'अग्रिम जन्मदिन की शुभकामनाएँ, PookiE (Agarim janmadin ki shubhkamnaayein)',
+            bn: 'আগাম জন্মদিনের শুভেচ্ছা, PookiE (Agām janmadiner śubhecchā)',
+            ur: 'پیشگی سالگرہ مبارک, PookiE (Peshgi salgirah mubarak)',
+            tr: 'Erken Doğum Günün Kutlu Olsun, PookiE',
+            sv: 'Grattis i Förskott, PookiE',
+            no: 'Forsinket Gratulerer med Fødselsdagen, PookiE',
+            da: 'Tillykke med Fødselsdagen på Forhånd, PookiE',
+            fi: 'Hyvää Syntymäpäivää Etukäteen, PookiE',
+            pl: 'Wczesne Życzenia Urodzinowe, PookiE',
+            el: 'Πρόωρα Χρόνια Πολλά, PookiE (Proora Chronia Polla)',
+            he: 'יום הולדת שמח מראש, PookiE (Yom Huledet Sameach Me’rosh)',
+            th: 'สุขสันต์วันเกิดล่วงหน้า, PookiE (S̄uk̄h̄s̄ạnt̒ wạn keid lū̀ang n̂ā)',
+            vi: 'Sinh Nhật Sớm, PookiE',
+            id: 'Selamat Ulang Tahun Lebih Awal, PookiE',
+            ms: 'Selamat Hari Jadi Awal, PookiE',
+            tl: 'Maagang Maligayang Kaarawan, PookiE',
+            sw: 'Heri ya Siku ya Kuzaliwa Mapema, PookiE',
+            zu: 'Ukhisimusi Ouhle Okwangaphambili, PookiE',
+            xh: 'Usuku Olumnandi Lokuzalwa Ngaphambili, PookiE',
+            so: 'Dabaaldeg Dhalasho Hore, PookiE',
+            am: 'እንኳን ወቅታዊ ልደት ሐምሌ, PookiE (Inkwan weqtawi lidet hāmīlē)',
+            ti: 'ከምዕል ሕድሪ በዓል መልእኽት, PookiE (Kemil hidiri be’al melekhet)',
+            my: 'အချိန်မီမွေးနေ့ဖြစ်ပါစေ၊ PookiE',
+            lo: 'ສະແດງເສບທີ່ໃຫ້ກໍ່ວັນປິດ, PookiE',
+            km: 'សួស្តីថ្ងៃកំណើតមុន, PookiE',
+            ne: 'अग्रिम जन्मदिनको शुभकामना, PookiE',
+            pa: 'ਪੂਰਵ ਜਨਮਦਿਨ ਦੀਆਂ ਵਧਾਈਆਂ, PookiE',
+            mr: 'आगाऊ वाढदिवसाच्या शुभेच्छा, PookiE',
+            gu: 'પૂર્વજન્મદિનની શુભકામનાઓ, PookiE',
+            si: 'ප්‍රාථමික උපන් දිනය සුබාශිං, PookiE',
+            te: 'ముందుగా జన్మదిన శుభాకాంక్షలు, PookiE',
+            ta: 'முன்னணி பிறந்த நாளுக்கான வாழ்த்துக்கள், PookiE',
+            ml: 'മുൻകൂർ ജന്മദിനാശംസകൾ, PookiE',
+            ha: 'Taya Murnar Ranar Haihuwa Da Wuri, PookiE',
+            wo: 'Jàmm rekk yi, PookiE',
+            om: 'Baga Guyyaa Dhalootaa Duratti, PookiE',
+            yo: 'Ibi Ọdún Káàárọ̀, PookiE',
+            ig: 'Nri Obi Akwụkwọ Ọgwụ, PookiE',
+            ny: 'Tsiku Labwino la Kubadwa, PookiE',
+            tw: 'Akwabaa Afe Ntoaso, PookiE',
+            st: 'Matsatsi a Mabothobotho a Keresemese, PookiE',
+            ln: 'Biso nionso na nzela, PookiE',
+            rw: 'Umunsi Mwiza wa Bagenzi bawe, PookiE',
+            rn: 'Umunsi Mwiza wa bagenzi bawe, PookiE',
+            sn: 'Zororai Rakanaka, PookiE',
+            ts: 'Ku rhula ku hlamusela, PookiE',
+            kmr: 'Sêvajînê îro têkurînê, PookiE',
+            cr: 'Changa cho Tsiku la Kubadwa, PookiE',
+            uk: 'Попередній День Народження, PookiE (Poperedniy Den' Narodzhennya)',
+            ka: 'წინა დაბადების დღე
+        };
+
+        function updateBirthdayMessage() {
+            const now = new Date();
+            const birthday = new Date(now.getFullYear(), 8, 11); // September 11 is month 8 (0-based)
+            
+            // If birthday already passed this year, set it to next year
+            if (now > birthday) {
+                birthday.setFullYear(now.getFullYear() + 1);
+            }
+
+            // Update message based on the date
+            const birthdayMessage = document.getElementById('birthday-message');
+            const wishesTitle = document.getElementById('wishes-title');
+            
+            if (now.toDateString() === birthday.toDateString()) {
+                birthdayMessage.textContent = 'Happy Birthday to you PookiE!';
+                wishesTitle.textContent = 'Happy Birthday Wishes in Various Languages';
+            } else {
+                birthdayMessage.textContent = 'Advance Happy Birthday to you PookiE!';
+                wishesTitle.textContent = 'Advance Happy Birthday Wishes in Various Languages';
+            }
+
+            // Update all language wishes
+            document.querySelectorAll('.language').forEach(element => {
+                const lang = element.getAttribute('data-language');
+                element.innerHTML = `${translations[lang]} ${element.textContent.split(': ')[1]}`;
+            });
+        }
+
+        // Call the function to set the initial message
+        updateBirthdayMessage();
+        
+        // Optionally, update the message every day at midnight
+        setInterval(updateBirthdayMessage, 86400000); // 24 hours in milliseconds
+
         function updateCountdown() {
             const now = new Date();
             const birthday = new Date(now.getFullYear(), 8, 11); // September is month 8 (0-based)
