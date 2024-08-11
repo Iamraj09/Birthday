@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday PookiE!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('https://example.com/starry-night.jpg') no-repeat center center fixed;
+            background-color: #000; /* Ensure the background is black */
+            background-size: cover;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh; /* Ensure the body takes up at least the full height of the viewport */
+            margin: 0;
+            text-align: center;
+            position: relative;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for better contrast */
+            color: #fff; /* White text color for readability */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+            max-width: 90%; /* Make it responsive */
+            margin: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        h1 {
+            color: #ff6f61;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            animation: fadeInUp 1s ease-in-out;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 10px 0;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+        #countdown {
+            font-size: 1.5em;
+            margin-top: 20px;
+            color: #ff6f61;
+            font-weight: bold;
+            animation: fadeInUp 2s ease-in-out;
+        }
+        .moon {
+            position: absolute;
+            top: 10%;
+            right: 5%;
+            width: 150px; /* Adjust size for responsiveness */
+            height: 150px;
+            background: url('moon.jpg') no-repeat center center;
+            background-size: cover;
+            opacity: 0.8;
+            animation: moonGlow 5s infinite alternate;
+            z-index: 0;
+        }
+        .excited-text {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: #333;
+            font-size: 1.2em;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-in-out;
+            z-index: 1;
+        }
+        .wishes {
+            background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background for better contrast */
+            color: #fff; /* White text color for readability */
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+            max-width: 90%; /* Make it responsive */
+            margin: 20px;
+        }
+        .language {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes moonGlow {
+            from {
+                filter: brightness(0.7);
+            }
+            to {
+                filter: brightness(1.2);
+            }
+        }
+        /* Media Queries for Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container, .wishes {
+                padding: 15px;
+                max-width: 100%;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            p {
+                font-size: 1em;
+            }
+            #countdown {
+                font-size: 1.2em;
+            }
+            .moon {
+                width: 120px;
+                height: 120px;
+            }
+            .excited-text {
+                font-size: 1em;
+                bottom: 10px;
+                left: 10px;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="moon"></div>
+    <div class="container">
+        <h1>Advance Happy Birthday to you PookiE!</h1>
+        <p>MadaM ItIShReE SaHoO,</p>
+        <p>On your special day, I want you to know how much you mean to me and I should thank to your Bou for giving you birth for me. Wishing you a very big Advance birthday filled with love, joy, and all the happiness in the world!</p>
+        <p>You should know how much you mean to me and I cannot live without you my cutie Pookie and I will always be with you no matter you stay with me or not.</p>
+        <div id="countdown"></div>
+    </div>
+    <div class="excited-text">
+        I’m so excited for your birthday, PookiE! 🌙💕
+    </div>
+    <div class="wishes">
+        <h2>Advance Happy Birthday Wishes in Various Languages</h2>
+        <div class="language">English: Advance Happy Birthday, PookiE</div>
+        <div class="language">Spanish: Feliz Cumpleaños Adelantado, PookiE</div>
+        <div class="language">French: Joyeux Anniversaire en Avance, PookiE</div>
+        <div class="language">German: Alles Gute zum Geburtstag im Voraus, PookiE</div>
+        <div class="language">Italian: Buon Compleanno in Anticipo, PookiE</div>
+        <div class="language">Portuguese: Feliz Aniversário Antecipado, PookiE</div>
+        <div class="language">Dutch: Van tevoren Gefeliciteerd, PookiE</div>
+        <div class="language">Russian: С днём рождения заранее, PookiE (S dnyom rozhdeniya zaranee)</div>
+        <div class="language">Chinese (Simplified): 提前生日快乐, PookiE (Tíqián shēngrì kuàilè)</div>
+        <div class="language">Japanese: 前祝いの誕生日おめでとう, PookiE (Mae iwai no tanjōbi omedetō)</div>
+        <div class="language">Korean: 미리 생일 축하해요, PookiE (Miri saengil chukhahaeyo)</div>
+        <div class="language">Arabic: عيد ميلاد سعيد مقدماً, PookiE (Eid milad sa'id muqaddaman)</div>
+        <div class="language">Hindi: अग्रिम जन्मदिन की शुभकामनाएँ, PookiE (Agarim janmadin ki shubhkamnaayein)</div>
+        <div class="language">Bengali: আগাম জন্মদিনের শুভেচ্ছা, PookiE (Agām janmadiner śubhecchā)</div>
+        <div class="language">Urdu: پیشگی سالگرہ مبارک, PookiE (Peshgi salgirah mubarak)</div>
+        <div class="language">Turkish: Erken Doğum Günün Kutlu Olsun, PookiE</div>
+        <div class="language">Swedish: Grattis i Förskott, PookiE</div>
+        <div class="language">Norwegian: Forsinket Gratulerer med Fødselsdagen, PookiE</div>
+        <div class="language">Danish: Tillykke med Fødselsdagen på Forhånd, PookiE</div>
+        <div class="language">Finnish: Hyvää Syntymäpäivää Etukäteen, PookiE</div>
+        <div class="language">Polish: Wczesne Życzenia Urodzinowe, PookiE</div>
+        <div class="language">Greek: Πρόωρα Χρόνια Πολλά, PookiE (Proora Chronia Polla)</div>
+        <div class="language">Hebrew: יום הולדת שמח מראש, PookiE (Yom Huledet Sameach Merosh)</div>
+        <div class="language">Thai: สุขสันต์วันเกิดล่วงหน้า, PookiE (Suk San Wan Koet Luang Na)</div>
+        <div class="language">Vietnamese: Chúc Mừng Sinh Nhật Sớm, PookiE</div>
+        <div class="language">Swahili: Siku ya Kuzaliwa Mapema, PookiE</div>
+        <div class="language">Lithuanian: Išankstinės Gimimo Dienos Sveikinimai, PookiE</div>
+        <div class="language">Latvian: Priekšlaicīgs Dzimšanas Dienas Sveiciens, PookiE</div>
+        <div class="language">Estonian: Aegselt Head Sünnipäeva, PookiE</div>
+    </div>
+    <script>
+        function updateCountdown() {
+            const now = new Date();
+            const birthday = new Date(now.getFullYear(), 8, 11); // September is month 8 (0-based)
+            
+            // If birthday already passed this year, set it to next year
+            if (now > birthday) {
+                birthday.setFullYear(now.getFullYear() + 1);
+            }
+            
+            const timeDiff = birthday - now;
+            const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown').innerText = 
+                `Time left until your birthday: ${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
+        }
+        
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        
+        // Initial call
+        updateCountdown();
+    </script>
+</body>
+</html>
