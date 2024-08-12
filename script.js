@@ -107,4 +107,55 @@ document.getElementById("language-wishes").innerHTML = languages
     .map(language => `<p class="blinking-text">${language}</p>`)
     .join("");
 
+// Array of daily messages leading up to her birthday on September 11
+const dailyMessages = [
+    "Just 30 days to go! Your birthday countdown starts now! 🎉",
+    "Only 29 days left until your special day! Can't wait! 🥳",
+    "28 days and counting! I'm getting more excited by the day! 🎂",
+    "27 days to go! Every day brings us closer to the big celebration! 🎁",
+    "26 days left! Your birthday is going to be amazing! ✨",
+    "25 days remaining! I can’t wait to celebrate you! 💖",
+    "24 days to go! Thinking about all the joy you bring into my life! 😊",
+    "23 days left! Your special day is approaching quickly! 🌟",
+    "22 days to go! I’m counting down the days with excitement! 🎈",
+    "21 days remaining! Each day brings us closer to the celebration! 🎉",
+    "20 days left! I’m so lucky to have you in my life! 💝",
+    "19 days to go! Your birthday is going to be unforgettable! 🎂",
+    "18 days left! Can’t wait to make your day special! 🎁",
+    "17 days remaining! Your smile lights up my world! 🌟",
+    "16 days to go! I’m so excited for your big day! 🎉",
+    "15 days left! Every moment with you is a gift! 💖",
+    "14 days remaining! Two weeks to go until your special day! 🥳",
+    "13 days left! Your birthday is going to be filled with joy! 😊",
+    "12 days to go! Counting down with love and excitement! 🎂",
+    "11 days left! Your special day is almost here! 🎁",
+    "10 days remaining! Can’t wait to celebrate you! ✨",
+    "9 days to go! You mean the world to me! 💖",
+    "8 days left! The anticipation is building! 🎉",
+    "7 days remaining! Just one week until your big day! 🌟",
+    "6 days to go! Your birthday is going to be magical! 🎁",
+    "5 days left! So excited to celebrate your special day! 🎂",
+    "4 days remaining! The countdown is almost over! 🥳",
+    "3 days to go! Your birthday is right around the corner! 🎉",
+    "2 days left! Can’t wait to shower you with love and joy! 💝",
+    "1 day remaining! Tomorrow is your big day! I’m so excited! 🎂",
+    "Happy Birthday, my Cutie Pookie! Today we celebrate YOU! 🥳🎉"
+];
+
+// Function to calculate the index of the daily message based on the date
+function getDailyMessageIndex() {
+    const today = new Date();
+    const startDate = new Date(today.getFullYear(), 7, 12); // August 12
+    const diff = today - startDate;
+    const index = Math.floor(diff / (1000 * 60 * 60 * 24));
+    
+    if (index >= 0 && index < dailyMessages.length) {
+        return dailyMessages[index];
+    } else {
+        return "I can't wait to celebrate your special day! 🎉";
+    }
+}
+
+// Set the daily message
+document.getElementById('daily-message').textContent = getDailyMessageIndex();
 

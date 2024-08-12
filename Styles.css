@@ -170,7 +170,7 @@ body {
 /* Language Wishes Styling */
 #language-wishes {
     font-size: 20px;
-    color: #278096;
+    color: #72883e;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     margin-top: 20px;
@@ -271,4 +271,26 @@ body {
     100% {
         top: 80%; /* Adjust as necessary to control how far the text moves */
     }
+}
+
+#special-footer {
+    background-color: #030108;
+    color: #16aab4b2;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 10px rgba(229, 226, 226, 0.1);
+}
+
+#excitement-message {
+    font-weight: bold;
+}
+
+#daily-message {
+    margin-top: 10px;
+    color: #da5b12; /* A different color to make the message stand out */
+    font-weight: bold;
 }
